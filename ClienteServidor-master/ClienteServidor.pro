@@ -17,7 +17,6 @@ DEFINES += QT_DEPRECATED_WARNINGS
 
 SOURCES += \
     clientesocket.cpp \
-    clientewidget.cpp \
     grafo.cpp \
     main.cpp \
     mainwindow.cpp \
@@ -26,7 +25,6 @@ SOURCES += \
 
 HEADERS += \
     clientesocket.h \
-    clientewidget.h \
     enumeraciones.h \
     grafo.h \
     mainwindow.h \
@@ -34,7 +32,6 @@ HEADERS += \
     servidorwidget.h
 
 FORMS += \
-    clientewidget.ui \
     mainwindow.ui \
     servidorwidget.ui
 

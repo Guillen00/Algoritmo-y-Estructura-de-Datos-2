@@ -8,6 +8,10 @@
 #include <queue>
 #include <list>
 #include <stack>
+#include "clientesocket.h"
+#include "enumeraciones.h"
+#include <QDebug>
+
 
 
 Grafo  C;
@@ -17,8 +21,15 @@ QDrawLine::QDrawLine(QWidget *parent)
     , ui(new Ui::QDrawLine)
 {
     ui->setupUi(this);
-    m_nPTargetPixmap = new QPixmap(500,500);
+    m_nPTargetPixmap = new QPixmap(500,400);
     m_nPTargetPixmap->fill(Qt::white);
+
+    mClienteSocket = makeSocket();
+    m_nPTargetPixmap->fill(Qt::white);
+
+    grafocreado();
+    update();
+
 
 }
 
@@ -27,6 +38,12 @@ QDrawLine::~QDrawLine()
     delete ui;
 }
 
+
+void QDrawLine::closeEvent(QCloseEvent *event)
+{
+    mClienteSocket->disconnectFromHost();
+    QWidget::closeEvent(event);
+}
 
 
 void QDrawLine::paintEvent(QPaintEvent *e)
@@ -56,20 +73,21 @@ void QDrawLine::on_botoncrear_clicked()
     update();
 }
 
-int peso;
 
-void QDrawLine::arista(int x1,int y1,int x2,int y2){
+
+void QDrawLine::arista(int x1,int y1,int x2,int y2,int peso){
     QPainter PixmapPainter(m_nPTargetPixmap);
     QPen pen(Qt::black);
     PixmapPainter.setPen(pen);
     PixmapPainter.drawLine(x1,y1,x2,y2);
-    peso=(rand()%19+1);
     PixmapPainter.drawText((x2+x1)/2,abs(y1+y2)/2,QString::number(peso));
     update();
 }
 void QDrawLine::on_dikstra_clicked()
 {
-    dijkstra();
+    QString enviarvertices = ui->vertice1->text() + ui->vertice2->text();
+    mClienteSocket->enviaMensaje(InfoQuery, enviarvertices);
+    //dijkstra();
 }
 
 
@@ -125,5 +143,42 @@ void QDrawLine::grafocreado(){
 void QDrawLine::aux(std::string uno, std::string dos ,int peso,int x1,int y1,int x2, int y2){
     C.insertararista(C.getvertice(uno),C.getvertice(dos),peso);
     C.insertararista(C.getvertice(dos),C.getvertice(uno),peso);
-    arista(x1,y1,x2,y2);
+    arista(x1,y1,x2,y2,peso);
+}
+
+void QDrawLine::on_conectar_clicked()
+{
+    QString ipServidor = ui->lineIP->text();
+    quint16 puertoServidor = quint16(ui->linePUERTO->text().toUInt());
+
+    if (ipServidor.isEmpty())
+    {
+        return;
+    }
+    if (puertoServidor == 0)
+    {
+        return;
+    }
+
+    mClienteSocket->setDireccionDelServidor(ipServidor);
+    mClienteSocket->setPuertoDelServidor(puertoServidor);
+    mClienteSocket->conectaConElServidor();
+    ui->label_6->setText("Conectado");
+}
+
+ClienteSocket *QDrawLine::makeSocket()
+{
+    ClienteSocket *socket = new ClienteSocket(this);
+
+    connect(socket, &ClienteSocket::mensajeRecibido, this,
+            [&](int enumeracion, const QString &mensaje, ClienteSocket *socket)
+    {
+        (void) socket;
+        if (enumeracion == InfoResponse)
+        {
+           ui->resultado->setText(mensaje);
+        }
+    });
+
+    return socket;
 }
