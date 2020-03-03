@@ -1,25 +1,28 @@
+/**@Guille00
+  *@data 02/03/2020
+  *@brief Descripción: A continuación se realiza la especificación de las funciones que se declararon en el documento grafo.h
+  */
+
 #include "grafo.h"
 
-
+/**
+ * @brief Grafo::Inicializa , crea el grafo y lo pone null
+ */
 void Grafo::Inicializa(){
     h = NULL;
 
+/** @brief Grafo::Vacio , devuelve si el grafo esta vacio o no .
+  */
 
 }
 bool Grafo::Vacio(){
     if(h == NULL){return true;}
     else{return false;}
 }
-int Grafo:: Tamano(){
-    int cont =0;
-    vertice *aux;
-    aux =h;
-    while(aux !=NULL){
-        cont++;
-        aux = aux->sig;
-    }
-    return cont;
-}
+
+/** @brief Grafo::getvertice , obtiene el vertice con el nombre ingresado .
+  */
+
 
 vertice *Grafo::getvertice(string nombre){
     vertice *aux;
@@ -32,6 +35,11 @@ vertice *Grafo::getvertice(string nombre){
     }
     return NULL;
 }
+
+/** @brief Grafo::insertarvertice , inserta un vertice al grafo y le da el nombre que se ingreso .
+  */
+
+
 void Grafo::insertarvertice(string nombre){
     vertice *nuevo =  new vertice;
     nuevo->nombre = nombre;
@@ -46,6 +54,10 @@ void Grafo::insertarvertice(string nombre){
 
 
 }
+
+
+/** @brief Grafo::insertararista , inserta una arista que conecta a los dos vertices que se ingresan y se le da un peso que también se ingresa.
+  */
 
 void Grafo::insertararista(vertice *origen, vertice *destino, int peso){
     arista *nueva = new arista;
@@ -69,6 +81,10 @@ void Grafo::insertararista(vertice *origen, vertice *destino, int peso){
 
 }
 
+/** @brief Grafo::listaadyacencia , devuelve una lista de todas las aristas con sus respectivos vertices concetados  .
+  */
+
+
 void Grafo::listaadyacencia(){
     vertice *vertaux;
     arista *aristaaux;
@@ -85,17 +101,12 @@ void Grafo::listaadyacencia(){
         cout<<endl;    //salto de linea
     }
  }
-void Grafo::anular(){
-    vertice *aux;
-    while(h !=NULL){
-        aux = h;
-        h= h->sig;
-        delete(aux);
-    }
-}
 
-void Grafo::Dijkstra(vertice *origen, vertice *destino){
+/** @brief Grafo::Dijkstra , Es un algoritmo para buscar el camino más corto de un vertice a otro , en este caso retorna la tuta más corta entre los vertices ingresados .
+  */
 
+string Grafo::Dijkstra(vertice *origen, vertice *destino){
+    string ruta=" ";
     int band,band2, band3=0;
     arista *aux;
     vertice *verticeactual;
@@ -107,12 +118,12 @@ void Grafo::Dijkstra(vertice *origen, vertice *destino){
     list<vertice*>::iterator i;
     cola.push(origen);
 
-
+    cout<<"primero"<<endl;
     while(!cola.empty()){
         band =0;
         verticeactual = cola.front();
         cola.pop();
-
+        cout<<"segundo"<<endl;
         for(i=lista.begin();i!=lista.end();i++){
             if(verticeactual == *i){
                 band = 1;
@@ -121,25 +132,29 @@ void Grafo::Dijkstra(vertice *origen, vertice *destino){
 
         }
         if(band ==0){
+            cout<<"tercero"<<endl;
             if(verticeactual == destino){//
-
+                cout<<"CUARTO"<<endl;
                 band3 =1;
                 destinoactual = destino;
                 while(!pila.empty()){
-                    cout<<destinoactual->nombre<<"<-";
+                    cout<<"CUATRO.UNO"<<endl;
+                    //cout<<destinoactual->nombre<<"<-";
+                    ruta=ruta+destinoactual->nombre+" <-- ";
                     while(!pila.empty() && pila.top().second != destinoactual){
                         pila.pop();
-
+                        cout<<"POP"<<endl;
                     }
                     if(!pila.empty()){
                         destinoactual = pila.top().first;
 
                     }
                 }
-                cout<<endl;
+                //cout<<endl;
             }
             lista.push_back(verticeactual);
             aux = verticeactual->ady;
+            cout<<"QUINTO"<<endl;
             while(aux!= NULL){
                 band2 =0;
                 for(i=lista.begin();i!=lista.end();i++){
@@ -160,4 +175,5 @@ void Grafo::Dijkstra(vertice *origen, vertice *destino){
     if(band3 ==0){
         cout<<"no hay ruta"<<endl;
     }
+    return "completado";
 }

@@ -1,3 +1,8 @@
+/**@Guille00
+  *@data 02/03/2020
+  *@brief Descripción: A continuación se realiza la especificación de las funciones que se declararon en el documento mainwindow.h
+  */
+
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
 #include <QPainter>
@@ -12,9 +17,17 @@
 #include "enumeraciones.h"
 #include <QDebug>
 
-
+/**
+ * @brief C , lo usamos para implementar los métodos de la clase grafo
+ */
 
 Grafo  C;
+
+
+/**
+ * @brief QDrawLine::QDrawLine Inicializa la interfase grafica y crea de una vez la representación del grafo
+ * @param parent
+ */
 
 QDrawLine::QDrawLine(QWidget *parent)
     : QMainWindow(parent)
@@ -25,7 +38,6 @@ QDrawLine::QDrawLine(QWidget *parent)
     m_nPTargetPixmap->fill(Qt::white);
 
     mClienteSocket = makeSocket();
-    m_nPTargetPixmap->fill(Qt::white);
 
     grafocreado();
     update();
@@ -33,11 +45,19 @@ QDrawLine::QDrawLine(QWidget *parent)
 
 }
 
+/**
+ * @brief QDrawLine::~QDrawLine , elimina la interfase cuando se cierra la aplicación
+ */
+
 QDrawLine::~QDrawLine()
 {
     delete ui;
 }
 
+/**
+ * @brief QDrawLine::closeEvent , se desconecta del servidor cuando se cierre la aplicación
+ * @param event
+ */
 
 void QDrawLine::closeEvent(QCloseEvent *event)
 {
@@ -45,6 +65,10 @@ void QDrawLine::closeEvent(QCloseEvent *event)
     QWidget::closeEvent(event);
 }
 
+/**
+ * @brief QDrawLine::paintEvent , Nos permite tener un evento para porder dibujar en pantalla.
+ * @param e
+ */
 
 void QDrawLine::paintEvent(QPaintEvent *e)
 {
@@ -54,6 +78,12 @@ void QDrawLine::paintEvent(QPaintEvent *e)
     painter.drawPixmap(0, 0, *m_nPTargetPixmap);
 }
 
+/**
+ * @brief QDrawLine::nodo , crea un nodo en el pixmap , le da medidas y coordenadas para posicionarse
+ * @param x
+ * @param y
+ * @param t
+ */
 
 void QDrawLine::nodo(int x,int y,string t){
     QPainter PixmapPainter(m_nPTargetPixmap);
@@ -65,15 +95,14 @@ void QDrawLine::nodo(int x,int y,string t){
     update();
 }
 
-void QDrawLine::on_botoncrear_clicked()
-{
-    m_nPTargetPixmap->fill(Qt::white);
-
-    grafocreado();
-    update();
-}
-
-
+/**
+ * @brief QDrawLine::arista , dibuja las aristas en pantalla en el pixmap
+ * @param x1
+ * @param y1
+ * @param x2
+ * @param y2
+ * @param peso
+ */
 
 void QDrawLine::arista(int x1,int y1,int x2,int y2,int peso){
     QPainter PixmapPainter(m_nPTargetPixmap);
@@ -83,68 +112,89 @@ void QDrawLine::arista(int x1,int y1,int x2,int y2,int peso){
     PixmapPainter.drawText((x2+x1)/2,abs(y1+y2)/2,QString::number(peso));
     update();
 }
+
+/**
+ * @brief QDrawLine::on_dikstra_clicked , Cuando se presiona el boton de Dijkstra se mandan los vertices al servidor y este nos envia la ruta más corta entre los vertices.
+ */
+
+
 void QDrawLine::on_dikstra_clicked()
 {
     QString enviarvertices = ui->vertice1->text() + ui->vertice2->text();
+
+    string pase[2];
+    pase[0]= ui->vertice1->text().toStdString();
+    pase[1]= ui->vertice2->text().toStdString();
     mClienteSocket->enviaMensaje(InfoQuery, enviarvertices);
     //dijkstra();
 }
 
-
+/**
+ * @brief QDrawLine::dijkstra , leemos lo que se escribio en los espacios de la interfase que corresponden a los vertices para hacer la ruta más corta.
+ */
 
 void QDrawLine::dijkstra(){
     QString name1,name2;
     name1 = ui->vertice1->text();
     name2 = ui->vertice2->text();
     cout<<name1.toStdString()+"   "+name2.toStdString()<<endl;
-    cout <<"Paso por aca"<<endl;
-    cout <<C.Tamano()<<endl;
     C.Dijkstra(C.getvertice(name1.toStdString()),C.getvertice(name2.toStdString()));
 
 
 }
+
+/**
+ * @brief QDrawLine::grafocreado, crea el grafo por completo con las aristas y vertices para poder hacer uso de ellos
+ */
+
 void QDrawLine::grafocreado(){
-    C.Inicializa();
-    C.insertarvertice("H");
+
     nodo(30,250,"H");
-    C.insertarvertice("A");
     nodo(120,100,"A");
-    C.insertarvertice("D");
     nodo(120,350,"D");
-    C.insertarvertice("B");
     nodo(180,250,"B");
-    C.insertarvertice("C");
     nodo(240,80,"C");
-    C.insertarvertice("G");
     nodo(240,350,"G");
-    C.insertarvertice("E");
     nodo(340,250,"E");
-    C.insertarvertice("F");
     nodo(360,100,"F");
-    aux("H","A",10,30+10,250+10,120+10,100+10);
-    aux("H","F",9,30+10,250+10,360+10,100+10);
-    aux("H","B",6,30+10,250+10,180+10,250+10);
-    aux("H","G",3,30+10,250+10,240+10,350+10);
-    aux("H","D",14,30+10,250+10,120+10,350+10);
-    aux("D","A",2,120+10,350+10,120+10,100+10);
-    aux("D","B",8,120+10,350+10,180+10,250+10);
-    aux("D","E",12,120+10,350+10,340+10,250+10);
-    aux("A","B",3,120+10,100+10,180+10,250+10);
-    aux("A","C",5,120+10,100+10,240+10,80+10);
-    aux("B","G",6,180+10,250+10,240+10,350+10);
-    aux("B","C",5,180+10,250+10,240+10,80+10);
-    aux("B","E",4,180+10,250+10,340+10,250+10);
-    aux("C","F",7,240+10,80+10,360+10,100+10);
-    aux("C","G",9,240+10,80+10,240+10,350+10);
-    aux("C","E",1,240+10,80+10,340+10,250+10);
-    aux("G","E",7,240+10,350+10,340+10,250+10);
+    aux(10,30+10,250+10,120+10,100+10);
+    aux(9,30+10,250+10,360+10,100+10);
+    aux(6,30+10,250+10,180+10,250+10);
+    aux(3,30+10,250+10,240+10,350+10);
+    aux(14,30+10,250+10,120+10,350+10);
+    aux(2,120+10,350+10,120+10,100+10);
+    aux(8,120+10,350+10,180+10,250+10);
+    aux(12,120+10,350+10,340+10,250+10);
+    aux(3,120+10,100+10,180+10,250+10);
+    aux(5,120+10,100+10,240+10,80+10);
+    aux(6,180+10,250+10,240+10,350+10);
+    aux(5,180+10,250+10,240+10,80+10);
+    aux(4,180+10,250+10,340+10,250+10);
+    aux(7,240+10,80+10,360+10,100+10);
+    aux(9,240+10,80+10,240+10,350+10);
+    aux(1,240+10,80+10,340+10,250+10);
+    aux(7,240+10,350+10,340+10,250+10);
 
 }
-void QDrawLine::aux(std::string uno, std::string dos ,int peso,int x1,int y1,int x2, int y2){
-    C.insertararista(C.getvertice(uno),C.getvertice(dos),peso);
-    C.insertararista(C.getvertice(dos),C.getvertice(uno),peso);
+
+/**
+ * @brief QDrawLine::aux , una función con el objetivo de crear las aristas de los mismos vertices con el mismo peso de ida y vuelta
+ * @param peso
+ * @param x1
+ * @param y1
+ * @param x2
+ * @param y2
+ */
+
+void QDrawLine::aux(int peso,int x1,int y1,int x2, int y2){
     arista(x1,y1,x2,y2,peso);
 }
+
+
+/**
+ * @brief QDrawLine::on_conectar_clicked , cuando se presiona se lee la linea en la cual se ingresa la ip y el puerto para conectar
+ * se envian los datos para poder conectar con el servidor
+ */
 
 void QDrawLine::on_conectar_clicked()
 {
@@ -166,6 +216,11 @@ void QDrawLine::on_conectar_clicked()
     ui->label_6->setText("Conectado");
 }
 
+/**
+ * @brief QDrawLine::makeSocket , Metodo el cual conecta con el servidor para recibir el mensaje que el servidor mande y lo imprime en la etiqueta de resultado.
+ * @return
+ */
+
 ClienteSocket *QDrawLine::makeSocket()
 {
     ClienteSocket *socket = new ClienteSocket(this);
@@ -173,6 +228,7 @@ ClienteSocket *QDrawLine::makeSocket()
     connect(socket, &ClienteSocket::mensajeRecibido, this,
             [&](int enumeracion, const QString &mensaje, ClienteSocket *socket)
     {
+        cout<<"paso lo"<<endl;
         (void) socket;
         if (enumeracion == InfoResponse)
         {

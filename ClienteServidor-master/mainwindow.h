@@ -1,3 +1,9 @@
+/**@Guille00
+  *@data 02/03/2020
+  *@brief Descripción: A continuación se describe la clase QDrawLine, la cual esta conectada con ClienteSocket y con la interfase del cliente.
+  */
+
+
 #ifndef MAINWINDOW_H
 #define MAINWINDOW_H
 
@@ -8,6 +14,10 @@
 
 #include <string>
 
+/**Se añaden librerias de las cuales podremos utilizar metodos para dibujar en pantalla y el uso de la interfase del cliente
+ * también se definen variables las cuales se utilizarán en el archivp cpp
+ *
+ */
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class QDrawLine; }
@@ -32,18 +42,24 @@ private:
 
 protected:
     void closeEvent(QCloseEvent *event);
+/**Se utiliza para dibujar en pantalla
+  *
+  */
 protected:
     void paintEvent(QPaintEvent *e);
+
+    /**Se utiliza para crear los componentes del grafo
+      *
+      */
 public:
     void nodo(int x,int y ,std::string t);
     void arista(int x1,int y1,int x2,int y2,int peso);
     void dijkstra();
     void grafocreado();
-    void aux(std::string uno, std::string dos,int peso,int x1,int y1,int x2,int y2);
+    void aux(int peso,int x1,int y1,int x2,int y2);
 
 private slots:
 
-    void on_botoncrear_clicked();
     void on_dikstra_clicked();
     void on_conectar_clicked();
 };

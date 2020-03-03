@@ -1,7 +1,18 @@
+/**@Guille00
+  *@data 02/03/2020
+  *@brief Descripción: A continuación se describe la clase ClienteSocket la cual tiene funciones para lograr concetarse con el servidor y poder tener una
+  * comunicaciòn cliente-servidor
+  */
+
 #ifndef CLIENTESOCKET_H
 #define CLIENTESOCKET_H
-
+#include <iostream>
 #include <QTcpSocket>
+
+/**Se incluye la libreria QTcpSocket la cual nos permite aplicar la comunicación con los sockets, también se crean varios métodos para comunicarse con el servidor
+ * tales como enviarle mensajes , recibirlos o abrir un puerto para la comunicación, a su vez se definieron algunas variables que se utilizarán en otro archivo
+  *
+  */
 
 class ClienteSocket : public QTcpSocket
 {
