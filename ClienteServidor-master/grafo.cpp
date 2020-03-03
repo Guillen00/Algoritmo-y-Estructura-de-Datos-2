@@ -122,6 +122,7 @@ string Grafo::Dijkstra(vertice *origen, vertice *destino){
     while(!cola.empty()){
         band =0;
         verticeactual = cola.front();
+        cout<<verticeactual->nombre<<endl;
         cola.pop();
         cout<<"segundo"<<endl;
         for(i=lista.begin();i!=lista.end();i++){
@@ -137,6 +138,7 @@ string Grafo::Dijkstra(vertice *origen, vertice *destino){
                 cout<<"CUARTO"<<endl;
                 band3 =1;
                 destinoactual = destino;
+                cout<<"CUARTO.UNO.DOS"<<endl;
                 while(!pila.empty()){
                     cout<<"CUATRO.UNO"<<endl;
                     //cout<<destinoactual->nombre<<"<-";
@@ -152,7 +154,13 @@ string Grafo::Dijkstra(vertice *origen, vertice *destino){
                 }
                 //cout<<endl;
             }
+            cout<<"CUARTO.TRES"<<endl;
             lista.push_back(verticeactual);
+            cout<<"CUARTO.CUATRO"<<endl;
+            if(verticeactual==NULL){
+            cout<<"verticeactual->nombre"<<endl;}
+            else{
+            cout<<verticeactual->ady->peso<<endl;}
             aux = verticeactual->ady;
             cout<<"QUINTO"<<endl;
             while(aux!= NULL){
@@ -175,5 +183,5 @@ string Grafo::Dijkstra(vertice *origen, vertice *destino){
     if(band3 ==0){
         cout<<"no hay ruta"<<endl;
     }
-    return "completado";
+    return ruta;
 }

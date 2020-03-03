@@ -26,6 +26,7 @@ ServidorWidget::ServidorWidget(QWidget *parent) :
     ui->frame2->setDisabled(true);
     ui->frame3->setDisabled(true);
     ui->plaintextedit->setReadOnly(true);
+    CrearGrafo();
 }
 
 /**
@@ -96,6 +97,7 @@ ServidorSocket *ServidorWidget::makeServidor()
 
 
         }
+
             g.listaadyacencia();
             QString ruta = QString::fromStdString(g.Dijkstra(g.getvertice(mensaje.mid(0,1).toStdString()),g.getvertice(mensaje.mid(1,1).toStdString())));
             mServidorSocket->enviaMensaje(InfoResponse,ruta,socket);
