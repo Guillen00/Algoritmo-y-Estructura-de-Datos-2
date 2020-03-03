@@ -1,0 +1,187 @@
+\hypertarget{class_servidor_socket}{}\section{Servidor\+Socket Class Reference}
+\label{class_servidor_socket}\index{Servidor\+Socket@{Servidor\+Socket}}
+
+
+Se comparte con Q\+Tcp\+Server y se crean los metodos básicos para la comunicación se cliente-\/servidor y sobre la conección con el clinete por medio de la ip y el puerto habilitado.  
+
+
+
+
+{\ttfamily \#include $<$servidorsocket.\+h$>$}
+
+
+
+Inheritance diagram for Servidor\+Socket\+:
+% FIG 0
+
+
+Collaboration diagram for Servidor\+Socket\+:
+% FIG 1
+\subsection*{Signals}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_servidor_socket_af81248e8b6bcf181e8f0bb9c76aff878}\label{class_servidor_socket_af81248e8b6bcf181e8f0bb9c76aff878}} 
+void {\bfseries mensaje\+Recibido} (int enumeracion, const Q\+String \&mensaje, \hyperlink{class_cliente_socket}{Cliente\+Socket} $\ast$socket)
+\item 
+\mbox{\Hypertarget{class_servidor_socket_ae7cc887e6dab5eec033fa82ca2c3d81b}\label{class_servidor_socket_ae7cc887e6dab5eec033fa82ca2c3d81b}} 
+void {\bfseries cliente\+Conectado} (\hyperlink{class_cliente_socket}{Cliente\+Socket} $\ast$socket)
+\item 
+\mbox{\Hypertarget{class_servidor_socket_a867912d9e6ef29ddae33625517ab16c4}\label{class_servidor_socket_a867912d9e6ef29ddae33625517ab16c4}} 
+void {\bfseries cliente\+Desconectado} (\hyperlink{class_cliente_socket}{Cliente\+Socket} $\ast$socket)
+\item 
+\mbox{\Hypertarget{class_servidor_socket_af81248e8b6bcf181e8f0bb9c76aff878}\label{class_servidor_socket_af81248e8b6bcf181e8f0bb9c76aff878}} 
+void {\bfseries mensaje\+Recibido} (int enumeracion, const Q\+String \&mensaje, \hyperlink{class_cliente_socket}{Cliente\+Socket} $\ast$socket)
+\item 
+\mbox{\Hypertarget{class_servidor_socket_ae7cc887e6dab5eec033fa82ca2c3d81b}\label{class_servidor_socket_ae7cc887e6dab5eec033fa82ca2c3d81b}} 
+void {\bfseries cliente\+Conectado} (\hyperlink{class_cliente_socket}{Cliente\+Socket} $\ast$socket)
+\item 
+\mbox{\Hypertarget{class_servidor_socket_a867912d9e6ef29ddae33625517ab16c4}\label{class_servidor_socket_a867912d9e6ef29ddae33625517ab16c4}} 
+void {\bfseries cliente\+Desconectado} (\hyperlink{class_cliente_socket}{Cliente\+Socket} $\ast$socket)
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_servidor_socket_a2c985a3cb60dbf2fa923060a99d1e06d}{Servidor\+Socket} (Q\+Object $\ast$parent=nullptr)
+\begin{DoxyCompactList}\small\item\em Descripción\+: A continuación se realiza la especificación de las funciones que se declararon en el documento \hyperlink{servidorsocket_8h_source}{servidorsocket.\+h}. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_servidor_socket_a9a4b69265d7a58134555cc3d51125470}\label{class_servidor_socket_a9a4b69265d7a58134555cc3d51125470}} 
+\hyperlink{class_servidor_socket_a9a4b69265d7a58134555cc3d51125470}{$\sim$\+Servidor\+Socket} () override
+\begin{DoxyCompactList}\small\item\em \hyperlink{class_servidor_socket_a9a4b69265d7a58134555cc3d51125470}{Servidor\+Socket\+::$\sim$\+Servidor\+Socket} , al cerrar la aplicación se eliminan los clientes conectados. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_servidor_socket_a23cd19f7c5a14ed1a19ae3ddcc0cd08f}\label{class_servidor_socket_a23cd19f7c5a14ed1a19ae3ddcc0cd08f}} 
+void \hyperlink{class_servidor_socket_a23cd19f7c5a14ed1a19ae3ddcc0cd08f}{inicia} ()
+\begin{DoxyCompactList}\small\item\em \hyperlink{class_servidor_socket_a23cd19f7c5a14ed1a19ae3ddcc0cd08f}{Servidor\+Socket\+::inicia} , se habilita el escuchando , confirmando que esta esperando menaje. \end{DoxyCompactList}\item 
+void \hyperlink{class_servidor_socket_a331c56c842d1b9a4150ec439fef6431d}{set\+Puerto} (quint16 puerto)
+\begin{DoxyCompactList}\small\item\em \hyperlink{class_servidor_socket_a331c56c842d1b9a4150ec439fef6431d}{Servidor\+Socket\+::set\+Puerto}, cambia la variable por el puerto al cual se quiere hablitar para la conección. \end{DoxyCompactList}\item 
+Q\+List$<$ \hyperlink{class_cliente_socket}{Cliente\+Socket} $\ast$ $>$ \hyperlink{class_servidor_socket_a9ed6f48ebb85a3aade45043a5a7960d4}{clientes} () const
+\begin{DoxyCompactList}\small\item\em \hyperlink{class_servidor_socket_a9ed6f48ebb85a3aade45043a5a7960d4}{Servidor\+Socket\+::clientes} , se crea una lista que contiene a todos los clientes conectados. \end{DoxyCompactList}\item 
+void \hyperlink{class_servidor_socket_ae6a3796c4a79a64e667268080716d056}{envia\+Mensaje} (int enumeracion, const Q\+String \&mensaje, \hyperlink{class_cliente_socket}{Cliente\+Socket} $\ast$cliente)
+\begin{DoxyCompactList}\small\item\em \hyperlink{class_servidor_socket_ae6a3796c4a79a64e667268080716d056}{Servidor\+Socket\+::envia\+Mensaje} , envia el mensaje hacia el cliente . \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_servidor_socket_a6e7e13a58e360f8811c2802e2a9c6883}\label{class_servidor_socket_a6e7e13a58e360f8811c2802e2a9c6883}} 
+void {\bfseries elimina\+Cliente} (\hyperlink{class_cliente_socket}{Cliente\+Socket} $\ast$socket)
+\item 
+\mbox{\Hypertarget{class_servidor_socket_aa80657a78d484a51a9c470232960412b}\label{class_servidor_socket_aa80657a78d484a51a9c470232960412b}} 
+void \hyperlink{class_servidor_socket_aa80657a78d484a51a9c470232960412b}{desconecta\+Clientes} ()
+\begin{DoxyCompactList}\small\item\em \hyperlink{class_servidor_socket_aa80657a78d484a51a9c470232960412b}{Servidor\+Socket\+::desconecta\+Clientes} , elimina la concección de los clientes. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_servidor_socket_a2c985a3cb60dbf2fa923060a99d1e06d}\label{class_servidor_socket_a2c985a3cb60dbf2fa923060a99d1e06d}} 
+{\bfseries Servidor\+Socket} (Q\+Object $\ast$parent=nullptr)
+\item 
+\mbox{\Hypertarget{class_servidor_socket_a23cd19f7c5a14ed1a19ae3ddcc0cd08f}\label{class_servidor_socket_a23cd19f7c5a14ed1a19ae3ddcc0cd08f}} 
+void {\bfseries inicia} ()
+\item 
+\mbox{\Hypertarget{class_servidor_socket_a331c56c842d1b9a4150ec439fef6431d}\label{class_servidor_socket_a331c56c842d1b9a4150ec439fef6431d}} 
+void {\bfseries set\+Puerto} (quint16 puerto)
+\item 
+\mbox{\Hypertarget{class_servidor_socket_ad1d5aa1a0f189c69eae5f72bdbd709ed}\label{class_servidor_socket_ad1d5aa1a0f189c69eae5f72bdbd709ed}} 
+Q\+List$<$ \hyperlink{class_cliente_socket}{Cliente\+Socket} $\ast$ $>$ {\bfseries clientes} () const
+\item 
+\mbox{\Hypertarget{class_servidor_socket_ae6a3796c4a79a64e667268080716d056}\label{class_servidor_socket_ae6a3796c4a79a64e667268080716d056}} 
+void {\bfseries envia\+Mensaje} (int enumeracion, const Q\+String \&mensaje, \hyperlink{class_cliente_socket}{Cliente\+Socket} $\ast$cliente)
+\item 
+\mbox{\Hypertarget{class_servidor_socket_a6e7e13a58e360f8811c2802e2a9c6883}\label{class_servidor_socket_a6e7e13a58e360f8811c2802e2a9c6883}} 
+void {\bfseries elimina\+Cliente} (\hyperlink{class_cliente_socket}{Cliente\+Socket} $\ast$socket)
+\item 
+\mbox{\Hypertarget{class_servidor_socket_aa80657a78d484a51a9c470232960412b}\label{class_servidor_socket_aa80657a78d484a51a9c470232960412b}} 
+void {\bfseries desconecta\+Clientes} ()
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{class_servidor_socket_ad72a3bb3c5ea8a940060d964fba86a9c}{incoming\+Connection} (qintptr handle) override
+\begin{DoxyCompactList}\small\item\em \hyperlink{class_servidor_socket_ad72a3bb3c5ea8a940060d964fba86a9c}{Servidor\+Socket\+::incoming\+Connection} , añade un nuevo cliente a la lista de clientes. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_servidor_socket_ad72a3bb3c5ea8a940060d964fba86a9c}\label{class_servidor_socket_ad72a3bb3c5ea8a940060d964fba86a9c}} 
+void {\bfseries incoming\+Connection} (qintptr handle) override
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Se comparte con Q\+Tcp\+Server y se crean los metodos básicos para la comunicación se cliente-\/servidor y sobre la conección con el clinete por medio de la ip y el puerto habilitado. 
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_servidor_socket_a2c985a3cb60dbf2fa923060a99d1e06d}\label{class_servidor_socket_a2c985a3cb60dbf2fa923060a99d1e06d}} 
+\index{Servidor\+Socket@{Servidor\+Socket}!Servidor\+Socket@{Servidor\+Socket}}
+\index{Servidor\+Socket@{Servidor\+Socket}!Servidor\+Socket@{Servidor\+Socket}}
+\subsubsection{\texorpdfstring{Servidor\+Socket()}{ServidorSocket()}}
+{\footnotesize\ttfamily Servidor\+Socket\+::\+Servidor\+Socket (\begin{DoxyParamCaption}\item[{Q\+Object $\ast$}]{parent = {\ttfamily nullptr} }\end{DoxyParamCaption})}
+
+
+
+Descripción\+: A continuación se realiza la especificación de las funciones que se declararon en el documento \hyperlink{servidorsocket_8h_source}{servidorsocket.\+h}. 
+
+02/03/2020 \hyperlink{class_servidor_socket_a2c985a3cb60dbf2fa923060a99d1e06d}{Servidor\+Socket\+::\+Servidor\+Socket} , Se definen las variables de escuchando que funciona para ver si esta esperando un mensaje y puerto para saber el puerto habilitado. 
+\begin{DoxyParams}{Parameters}
+{\em parent} & \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_servidor_socket_a9ed6f48ebb85a3aade45043a5a7960d4}\label{class_servidor_socket_a9ed6f48ebb85a3aade45043a5a7960d4}} 
+\index{Servidor\+Socket@{Servidor\+Socket}!clientes@{clientes}}
+\index{clientes@{clientes}!Servidor\+Socket@{Servidor\+Socket}}
+\subsubsection{\texorpdfstring{clientes()}{clientes()}}
+{\footnotesize\ttfamily Q\+List$<$ \hyperlink{class_cliente_socket}{Cliente\+Socket} $\ast$ $>$ Servidor\+Socket\+::clientes (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+\hyperlink{class_servidor_socket_a9ed6f48ebb85a3aade45043a5a7960d4}{Servidor\+Socket\+::clientes} , se crea una lista que contiene a todos los clientes conectados. 
+
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_servidor_socket_ae6a3796c4a79a64e667268080716d056}\label{class_servidor_socket_ae6a3796c4a79a64e667268080716d056}} 
+\index{Servidor\+Socket@{Servidor\+Socket}!envia\+Mensaje@{envia\+Mensaje}}
+\index{envia\+Mensaje@{envia\+Mensaje}!Servidor\+Socket@{Servidor\+Socket}}
+\subsubsection{\texorpdfstring{envia\+Mensaje()}{enviaMensaje()}}
+{\footnotesize\ttfamily void Servidor\+Socket\+::envia\+Mensaje (\begin{DoxyParamCaption}\item[{int}]{enumeracion,  }\item[{const Q\+String \&}]{mensaje,  }\item[{\hyperlink{class_cliente_socket}{Cliente\+Socket} $\ast$}]{cliente }\end{DoxyParamCaption})}
+
+
+
+\hyperlink{class_servidor_socket_ae6a3796c4a79a64e667268080716d056}{Servidor\+Socket\+::envia\+Mensaje} , envia el mensaje hacia el cliente . 
+
+
+\begin{DoxyParams}{Parameters}
+{\em enumeracion} & \\
+\hline
+{\em mensaje} & \\
+\hline
+{\em cliente} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_servidor_socket_ad72a3bb3c5ea8a940060d964fba86a9c}\label{class_servidor_socket_ad72a3bb3c5ea8a940060d964fba86a9c}} 
+\index{Servidor\+Socket@{Servidor\+Socket}!incoming\+Connection@{incoming\+Connection}}
+\index{incoming\+Connection@{incoming\+Connection}!Servidor\+Socket@{Servidor\+Socket}}
+\subsubsection{\texorpdfstring{incoming\+Connection()}{incomingConnection()}}
+{\footnotesize\ttfamily void Servidor\+Socket\+::incoming\+Connection (\begin{DoxyParamCaption}\item[{qintptr}]{handle }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [protected]}}
+
+
+
+\hyperlink{class_servidor_socket_ad72a3bb3c5ea8a940060d964fba86a9c}{Servidor\+Socket\+::incoming\+Connection} , añade un nuevo cliente a la lista de clientes. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em handle} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_servidor_socket_a331c56c842d1b9a4150ec439fef6431d}\label{class_servidor_socket_a331c56c842d1b9a4150ec439fef6431d}} 
+\index{Servidor\+Socket@{Servidor\+Socket}!set\+Puerto@{set\+Puerto}}
+\index{set\+Puerto@{set\+Puerto}!Servidor\+Socket@{Servidor\+Socket}}
+\subsubsection{\texorpdfstring{set\+Puerto()}{setPuerto()}}
+{\footnotesize\ttfamily void Servidor\+Socket\+::set\+Puerto (\begin{DoxyParamCaption}\item[{quint16}]{puerto }\end{DoxyParamCaption})}
+
+
+
+\hyperlink{class_servidor_socket_a331c56c842d1b9a4150ec439fef6431d}{Servidor\+Socket\+::set\+Puerto}, cambia la variable por el puerto al cual se quiere hablitar para la conección. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em puerto} & \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+servidorsocket.\+h\item 
+servidorsocket\+\_\+copy.\+h\item 
+servidorsocket.\+cpp\end{DoxyCompactItemize}

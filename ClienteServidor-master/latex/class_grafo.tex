@@ -1,0 +1,51 @@
+\hypertarget{class_grafo}{}\section{Grafo Class Reference}
+\label{class_grafo}\index{Grafo@{Grafo}}
+
+
+{\ttfamily \#include $<$grafo.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{class_grafo_ad0ae89382a426e06cedf7168dc474820}{Inicializa} ()
+\begin{DoxyCompactList}\small\item\em Descripción\+: A continuación se realiza la especificación de las funciones que se declararon en el documento \hyperlink{grafo_8h_source}{grafo.\+h}. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_grafo_a58d7b12e5bbcd312f3eff63686153fad}\label{class_grafo_a58d7b12e5bbcd312f3eff63686153fad}} 
+bool {\bfseries Vacio} ()
+\item 
+\mbox{\Hypertarget{class_grafo_a97f711c577665d0c574e5acaf19d9175}\label{class_grafo_a97f711c577665d0c574e5acaf19d9175}} 
+\hyperlink{classvertice}{vertice} $\ast$ \hyperlink{class_grafo_a97f711c577665d0c574e5acaf19d9175}{getvertice} (string nombre)
+\begin{DoxyCompactList}\small\item\em \hyperlink{class_grafo_a97f711c577665d0c574e5acaf19d9175}{Grafo\+::getvertice} , obtiene el vertice con el nombre ingresado . \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_grafo_a2590f5ae0405ea80ddc9098d66afe4d0}\label{class_grafo_a2590f5ae0405ea80ddc9098d66afe4d0}} 
+void \hyperlink{class_grafo_a2590f5ae0405ea80ddc9098d66afe4d0}{insertararista} (\hyperlink{classvertice}{vertice} $\ast$origen, \hyperlink{classvertice}{vertice} $\ast$destino, int peso)
+\begin{DoxyCompactList}\small\item\em \hyperlink{class_grafo_a2590f5ae0405ea80ddc9098d66afe4d0}{Grafo\+::insertararista} , inserta una arista que conecta a los dos vertices que se ingresan y se le da un peso que también se ingresa. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_grafo_aaa950070e4eb04903077e5470ecb6c37}\label{class_grafo_aaa950070e4eb04903077e5470ecb6c37}} 
+void \hyperlink{class_grafo_aaa950070e4eb04903077e5470ecb6c37}{insertarvertice} (string nombre)
+\begin{DoxyCompactList}\small\item\em \hyperlink{class_grafo_aaa950070e4eb04903077e5470ecb6c37}{Grafo\+::insertarvertice} , inserta un vertice al grafo y le da el nombre que se ingreso . \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_grafo_a2eacbfeb64a1b64cae38c2e8dbb45970}\label{class_grafo_a2eacbfeb64a1b64cae38c2e8dbb45970}} 
+void \hyperlink{class_grafo_a2eacbfeb64a1b64cae38c2e8dbb45970}{listaadyacencia} ()
+\begin{DoxyCompactList}\small\item\em \hyperlink{class_grafo_a2eacbfeb64a1b64cae38c2e8dbb45970}{Grafo\+::listaadyacencia} , devuelve una lista de todas las aristas con sus respectivos vertices concetados . \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_grafo_ad28ca6958013b075262955ef132a80e7}\label{class_grafo_ad28ca6958013b075262955ef132a80e7}} 
+string \hyperlink{class_grafo_ad28ca6958013b075262955ef132a80e7}{Dijkstra} (\hyperlink{classvertice}{vertice} $\ast$origen, \hyperlink{classvertice}{vertice} $\ast$destino)
+\begin{DoxyCompactList}\small\item\em \hyperlink{class_grafo_ad28ca6958013b075262955ef132a80e7}{Grafo\+::\+Dijkstra} , Es un algoritmo para buscar el camino más corto de un vertice a otro , en este caso retorna la tuta más corta entre los vertices ingresados . \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Se crea la clase grafo que contiene los vertices y aristas para conformar el grafo además se tienen las funciones las cuales se utilizarán para crear el grafo 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_grafo_ad0ae89382a426e06cedf7168dc474820}\label{class_grafo_ad0ae89382a426e06cedf7168dc474820}} 
+\index{Grafo@{Grafo}!Inicializa@{Inicializa}}
+\index{Inicializa@{Inicializa}!Grafo@{Grafo}}
+\subsubsection{\texorpdfstring{Inicializa()}{Inicializa()}}
+{\footnotesize\ttfamily void Grafo\+::\+Inicializa (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Descripción\+: A continuación se realiza la especificación de las funciones que se declararon en el documento \hyperlink{grafo_8h_source}{grafo.\+h}. 
+
+02/03/2020 \hyperlink{class_grafo_ad0ae89382a426e06cedf7168dc474820}{Grafo\+::\+Inicializa} , crea el grafo y lo pone null Grafo\+::\+Vacio , devuelve si el grafo esta vacio o no .
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+grafo.\+h\item 
+grafo.\+cpp\end{DoxyCompactItemize}

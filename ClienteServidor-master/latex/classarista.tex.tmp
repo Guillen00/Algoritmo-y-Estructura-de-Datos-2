@@ -1,0 +1,36 @@
+\hypertarget{classarista}{}\section{arista Class Reference}
+\label{classarista}\index{arista@{arista}}
+
+
+{\ttfamily \#include $<$grafo.\+h$>$}
+
+
+
+Collaboration diagram for arista\+:
+% FIG 0
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classarista_afd0081ece110deab29a6605259e78b93}\label{classarista_afd0081ece110deab29a6605259e78b93}} 
+\hyperlink{classarista}{arista} $\ast$ {\bfseries sig}
+\item 
+\mbox{\Hypertarget{classarista_af05828f493925510064cbec12bcc3aba}\label{classarista_af05828f493925510064cbec12bcc3aba}} 
+\hyperlink{classvertice}{vertice} $\ast$ {\bfseries ady}
+\item 
+\mbox{\Hypertarget{classarista_ab23bdd12fc8944500d2ce747999468d1}\label{classarista_ab23bdd12fc8944500d2ce747999468d1}} 
+int {\bfseries peso}
+\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classarista_aa89bd7919924d99b99ffa9ab271175a3}\label{classarista_aa89bd7919924d99b99ffa9ab271175a3}} 
+class {\bfseries Grafo}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Se crea la clase arista la cual hará una conección o relación entre dos vertices con un puntero y otro puntero que lo relaciona a las demás aristas que se relacionan con el vertice posicionado. 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+grafo.\+h\end{DoxyCompactItemize}

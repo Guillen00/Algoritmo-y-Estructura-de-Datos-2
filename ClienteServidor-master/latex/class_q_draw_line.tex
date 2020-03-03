@@ -1,0 +1,163 @@
+\hypertarget{class_q_draw_line}{}\section{Q\+Draw\+Line Class Reference}
+\label{class_q_draw_line}\index{Q\+Draw\+Line@{Q\+Draw\+Line}}
+
+
+Inheritance diagram for Q\+Draw\+Line\+:
+% FIG 0
+
+
+Collaboration diagram for Q\+Draw\+Line\+:
+% FIG 1
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_q_draw_line_a07661a5f938e3c3f48f9bf888bb79f81}{Q\+Draw\+Line} (Q\+Widget $\ast$parent=nullptr)
+\begin{DoxyCompactList}\small\item\em \hyperlink{class_q_draw_line_a07661a5f938e3c3f48f9bf888bb79f81}{Q\+Draw\+Line\+::\+Q\+Draw\+Line} Inicializa la interfase grafica y crea de una vez la representación del grafo. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_q_draw_line_aad8dd003553ea795ecf0815867560c12}\label{class_q_draw_line_aad8dd003553ea795ecf0815867560c12}} 
+\hyperlink{class_q_draw_line_aad8dd003553ea795ecf0815867560c12}{$\sim$\+Q\+Draw\+Line} ()
+\begin{DoxyCompactList}\small\item\em \hyperlink{class_q_draw_line_aad8dd003553ea795ecf0815867560c12}{Q\+Draw\+Line\+::$\sim$\+Q\+Draw\+Line} , elimina la interfase cuando se cierra la aplicación. \end{DoxyCompactList}\item 
+void \hyperlink{class_q_draw_line_a0276a58cbd32372b0032f4c4c0118b0f}{nodo} (int x, int y, std\+::string t)
+\begin{DoxyCompactList}\small\item\em \hyperlink{class_q_draw_line_a0276a58cbd32372b0032f4c4c0118b0f}{Q\+Draw\+Line\+::nodo} , crea un nodo en el pixmap , le da medidas y coordenadas para posicionarse. \end{DoxyCompactList}\item 
+void \hyperlink{class_q_draw_line_ace0fde2db464370e94b5eb7f098e7b3b}{arista} (int x1, int y1, int x2, int y2, int peso)
+\begin{DoxyCompactList}\small\item\em \hyperlink{class_q_draw_line_ace0fde2db464370e94b5eb7f098e7b3b}{Q\+Draw\+Line\+::arista} , dibuja las aristas en pantalla en el pixmap. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_q_draw_line_aeb3043ebed81cbb2814eeb8625616f42}\label{class_q_draw_line_aeb3043ebed81cbb2814eeb8625616f42}} 
+void \hyperlink{class_q_draw_line_aeb3043ebed81cbb2814eeb8625616f42}{dijkstra} ()
+\begin{DoxyCompactList}\small\item\em \hyperlink{class_q_draw_line_aeb3043ebed81cbb2814eeb8625616f42}{Q\+Draw\+Line\+::dijkstra} , leemos lo que se escribio en los espacios de la interfase que corresponden a los vertices para hacer la ruta más corta. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_q_draw_line_ad83e23c31610b56b59072897607bcde3}\label{class_q_draw_line_ad83e23c31610b56b59072897607bcde3}} 
+void \hyperlink{class_q_draw_line_ad83e23c31610b56b59072897607bcde3}{grafocreado} ()
+\begin{DoxyCompactList}\small\item\em \hyperlink{class_q_draw_line_ad83e23c31610b56b59072897607bcde3}{Q\+Draw\+Line\+::grafocreado}, crea el grafo por completo con las aristas y vertices para poder hacer uso de ellos. \end{DoxyCompactList}\item 
+void \hyperlink{class_q_draw_line_abb48f3a56434368ee258c56f4f15874e}{aux} (int peso, int x1, int y1, int x2, int y2)
+\begin{DoxyCompactList}\small\item\em \hyperlink{class_q_draw_line_abb48f3a56434368ee258c56f4f15874e}{Q\+Draw\+Line\+::aux} , una función con el objetivo de crear las aristas de los mismos vertices con el mismo peso de ida y vuelta. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{class_q_draw_line_a486e830084956f38a2da8bcc78ea9063}{close\+Event} (Q\+Close\+Event $\ast$event)
+\begin{DoxyCompactList}\small\item\em \hyperlink{class_q_draw_line_a486e830084956f38a2da8bcc78ea9063}{Q\+Draw\+Line\+::close\+Event} , se desconecta del servidor cuando se cierre la aplicación. \end{DoxyCompactList}\item 
+void \hyperlink{class_q_draw_line_ad2f14d95531049f1bf54474dbf60965b}{paint\+Event} (Q\+Paint\+Event $\ast$e)
+\begin{DoxyCompactList}\small\item\em \hyperlink{class_q_draw_line_ad2f14d95531049f1bf54474dbf60965b}{Q\+Draw\+Line\+::paint\+Event} , Nos permite tener un evento para porder dibujar en pantalla. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_q_draw_line_a07661a5f938e3c3f48f9bf888bb79f81}\label{class_q_draw_line_a07661a5f938e3c3f48f9bf888bb79f81}} 
+\index{Q\+Draw\+Line@{Q\+Draw\+Line}!Q\+Draw\+Line@{Q\+Draw\+Line}}
+\index{Q\+Draw\+Line@{Q\+Draw\+Line}!Q\+Draw\+Line@{Q\+Draw\+Line}}
+\subsubsection{\texorpdfstring{Q\+Draw\+Line()}{QDrawLine()}}
+{\footnotesize\ttfamily Q\+Draw\+Line\+::\+Q\+Draw\+Line (\begin{DoxyParamCaption}\item[{Q\+Widget $\ast$}]{parent = {\ttfamily nullptr} }\end{DoxyParamCaption})}
+
+
+
+\hyperlink{class_q_draw_line_a07661a5f938e3c3f48f9bf888bb79f81}{Q\+Draw\+Line\+::\+Q\+Draw\+Line} Inicializa la interfase grafica y crea de una vez la representación del grafo. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em parent} & \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_q_draw_line_ace0fde2db464370e94b5eb7f098e7b3b}\label{class_q_draw_line_ace0fde2db464370e94b5eb7f098e7b3b}} 
+\index{Q\+Draw\+Line@{Q\+Draw\+Line}!arista@{arista}}
+\index{arista@{arista}!Q\+Draw\+Line@{Q\+Draw\+Line}}
+\subsubsection{\texorpdfstring{arista()}{arista()}}
+{\footnotesize\ttfamily void Q\+Draw\+Line\+::arista (\begin{DoxyParamCaption}\item[{int}]{x1,  }\item[{int}]{y1,  }\item[{int}]{x2,  }\item[{int}]{y2,  }\item[{int}]{peso }\end{DoxyParamCaption})}
+
+
+
+\hyperlink{class_q_draw_line_ace0fde2db464370e94b5eb7f098e7b3b}{Q\+Draw\+Line\+::arista} , dibuja las aristas en pantalla en el pixmap. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x1} & \\
+\hline
+{\em y1} & \\
+\hline
+{\em x2} & \\
+\hline
+{\em y2} & \\
+\hline
+{\em peso} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_q_draw_line_abb48f3a56434368ee258c56f4f15874e}\label{class_q_draw_line_abb48f3a56434368ee258c56f4f15874e}} 
+\index{Q\+Draw\+Line@{Q\+Draw\+Line}!aux@{aux}}
+\index{aux@{aux}!Q\+Draw\+Line@{Q\+Draw\+Line}}
+\subsubsection{\texorpdfstring{aux()}{aux()}}
+{\footnotesize\ttfamily void Q\+Draw\+Line\+::aux (\begin{DoxyParamCaption}\item[{int}]{peso,  }\item[{int}]{x1,  }\item[{int}]{y1,  }\item[{int}]{x2,  }\item[{int}]{y2 }\end{DoxyParamCaption})}
+
+
+
+\hyperlink{class_q_draw_line_abb48f3a56434368ee258c56f4f15874e}{Q\+Draw\+Line\+::aux} , una función con el objetivo de crear las aristas de los mismos vertices con el mismo peso de ida y vuelta. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em peso} & \\
+\hline
+{\em x1} & \\
+\hline
+{\em y1} & \\
+\hline
+{\em x2} & \\
+\hline
+{\em y2} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_q_draw_line_a486e830084956f38a2da8bcc78ea9063}\label{class_q_draw_line_a486e830084956f38a2da8bcc78ea9063}} 
+\index{Q\+Draw\+Line@{Q\+Draw\+Line}!close\+Event@{close\+Event}}
+\index{close\+Event@{close\+Event}!Q\+Draw\+Line@{Q\+Draw\+Line}}
+\subsubsection{\texorpdfstring{close\+Event()}{closeEvent()}}
+{\footnotesize\ttfamily void Q\+Draw\+Line\+::close\+Event (\begin{DoxyParamCaption}\item[{Q\+Close\+Event $\ast$}]{event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+\hyperlink{class_q_draw_line_a486e830084956f38a2da8bcc78ea9063}{Q\+Draw\+Line\+::close\+Event} , se desconecta del servidor cuando se cierre la aplicación. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em event} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_q_draw_line_a0276a58cbd32372b0032f4c4c0118b0f}\label{class_q_draw_line_a0276a58cbd32372b0032f4c4c0118b0f}} 
+\index{Q\+Draw\+Line@{Q\+Draw\+Line}!nodo@{nodo}}
+\index{nodo@{nodo}!Q\+Draw\+Line@{Q\+Draw\+Line}}
+\subsubsection{\texorpdfstring{nodo()}{nodo()}}
+{\footnotesize\ttfamily void Q\+Draw\+Line\+::nodo (\begin{DoxyParamCaption}\item[{int}]{x,  }\item[{int}]{y,  }\item[{std\+::string}]{t }\end{DoxyParamCaption})}
+
+
+
+\hyperlink{class_q_draw_line_a0276a58cbd32372b0032f4c4c0118b0f}{Q\+Draw\+Line\+::nodo} , crea un nodo en el pixmap , le da medidas y coordenadas para posicionarse. 
+
+Se utiliza para crear los componentes del grafo
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & \\
+\hline
+{\em y} & \\
+\hline
+{\em t} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_q_draw_line_ad2f14d95531049f1bf54474dbf60965b}\label{class_q_draw_line_ad2f14d95531049f1bf54474dbf60965b}} 
+\index{Q\+Draw\+Line@{Q\+Draw\+Line}!paint\+Event@{paint\+Event}}
+\index{paint\+Event@{paint\+Event}!Q\+Draw\+Line@{Q\+Draw\+Line}}
+\subsubsection{\texorpdfstring{paint\+Event()}{paintEvent()}}
+{\footnotesize\ttfamily void Q\+Draw\+Line\+::paint\+Event (\begin{DoxyParamCaption}\item[{Q\+Paint\+Event $\ast$}]{e }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+\hyperlink{class_q_draw_line_ad2f14d95531049f1bf54474dbf60965b}{Q\+Draw\+Line\+::paint\+Event} , Nos permite tener un evento para porder dibujar en pantalla. 
+
+Se utiliza para dibujar en pantalla
+
+
+\begin{DoxyParams}{Parameters}
+{\em e} & \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+mainwindow.\+h\item 
+mainwindow.\+cpp\end{DoxyCompactItemize}

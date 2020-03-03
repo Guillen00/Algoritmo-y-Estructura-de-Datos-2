@@ -1,0 +1,103 @@
+\hypertarget{class_cliente_socket}{}\section{Cliente\+Socket Class Reference}
+\label{class_cliente_socket}\index{Cliente\+Socket@{Cliente\+Socket}}
+
+
+Descripción\+: A continuación se describe la clase \hyperlink{class_cliente_socket}{Cliente\+Socket} la cual tiene funciones para lograr concetarse con el servidor y poder tener una comunicaciòn cliente-\/servidor.  
+
+
+
+
+{\ttfamily \#include $<$clientesocket.\+h$>$}
+
+
+
+Inheritance diagram for Cliente\+Socket\+:
+% FIG 0
+
+
+Collaboration diagram for Cliente\+Socket\+:
+% FIG 1
+\subsection*{Signals}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_cliente_socket_a85bb0acefb353f0cd8ab799e8837031c}\label{class_cliente_socket_a85bb0acefb353f0cd8ab799e8837031c}} 
+void {\bfseries mensaje\+Recibido} (int enumeracion, const Q\+String \&mensaje, \hyperlink{class_cliente_socket}{Cliente\+Socket} $\ast$socket)
+\item 
+\mbox{\Hypertarget{class_cliente_socket_a9b3fe9b9c512e91b90c8aa86b4ee14e9}\label{class_cliente_socket_a9b3fe9b9c512e91b90c8aa86b4ee14e9}} 
+void {\bfseries desconectado} (\hyperlink{class_cliente_socket}{Cliente\+Socket} $\ast$socket)
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_cliente_socket_a92a124ca5c40e83cf640bd3c845af6ca}{Cliente\+Socket} (Q\+Object $\ast$parent=nullptr)
+\begin{DoxyCompactList}\small\item\em Descripción\+: A continuación se realiza la especificación de las funciones que se declararon en el documento .h. \end{DoxyCompactList}\item 
+void \hyperlink{class_cliente_socket_ad176a3962afc92f60da91d2526bcf569}{envia\+Mensaje} (int enumeracion, const Q\+String \&mensaje)
+\item 
+void \hyperlink{class_cliente_socket_a2ed30e026ad1252c8ad07fd437cf4cc4}{set\+Direccion\+Del\+Servidor} (const Q\+String \&ip)
+\item 
+void \hyperlink{class_cliente_socket_ad5b33460d9575854b5617d2a6e467231}{set\+Puerto\+Del\+Servidor} (quint16 puerto)
+\item 
+void \hyperlink{class_cliente_socket_a8cb382178c3e572188c61af72355f174}{conecta\+Con\+El\+Servidor} ()
+\item 
+bool \hyperlink{class_cliente_socket_af8e9fa96a8f3a2207f34b26c74d53de9}{set\+Socket\+Descriptor} (qintptr socket\+Descriptor, Socket\+State state=Connected\+State, Open\+Mode open\+Mode=Read\+Write) override
+\item 
+\mbox{\Hypertarget{class_cliente_socket_aa40872ba7f52bc1047e2012a6f824bcb}\label{class_cliente_socket_aa40872ba7f52bc1047e2012a6f824bcb}} 
+Q\+String {\bfseries id} () const
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Descripción\+: A continuación se describe la clase \hyperlink{class_cliente_socket}{Cliente\+Socket} la cual tiene funciones para lograr concetarse con el servidor y poder tener una comunicaciòn cliente-\/servidor. 
+
+02/03/2020\+Se incluye la libreria Q\+Tcp\+Socket la cual nos permite aplicar la comunicación con los sockets, también se crean varios métodos para comunicarse con el servidor tales como enviarle mensajes , recibirlos o abrir un puerto para la comunicación, a su vez se definieron algunas variables que se utilizarán en otro archivo 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_cliente_socket_a92a124ca5c40e83cf640bd3c845af6ca}\label{class_cliente_socket_a92a124ca5c40e83cf640bd3c845af6ca}} 
+\index{Cliente\+Socket@{Cliente\+Socket}!Cliente\+Socket@{Cliente\+Socket}}
+\index{Cliente\+Socket@{Cliente\+Socket}!Cliente\+Socket@{Cliente\+Socket}}
+\subsubsection{\texorpdfstring{Cliente\+Socket()}{ClienteSocket()}}
+{\footnotesize\ttfamily Cliente\+Socket\+::\+Cliente\+Socket (\begin{DoxyParamCaption}\item[{Q\+Object $\ast$}]{parent = {\ttfamily nullptr} }\end{DoxyParamCaption})}
+
+
+
+Descripción\+: A continuación se realiza la especificación de las funciones que se declararon en el documento .h. 
+
+02/03/2020\+Se importan librerias para manejar los documentos u información de una mejor manera. El método \hyperlink{class_cliente_socket}{Cliente\+Socket} inicializa las variables y busca la conección con esas condiciones 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_cliente_socket_a8cb382178c3e572188c61af72355f174}\label{class_cliente_socket_a8cb382178c3e572188c61af72355f174}} 
+\index{Cliente\+Socket@{Cliente\+Socket}!conecta\+Con\+El\+Servidor@{conecta\+Con\+El\+Servidor}}
+\index{conecta\+Con\+El\+Servidor@{conecta\+Con\+El\+Servidor}!Cliente\+Socket@{Cliente\+Socket}}
+\subsubsection{\texorpdfstring{conecta\+Con\+El\+Servidor()}{conectaConElServidor()}}
+{\footnotesize\ttfamily void Cliente\+Socket\+::conecta\+Con\+El\+Servidor (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Realiza la conección con el servidor mandando la ip y el puerto \mbox{\Hypertarget{class_cliente_socket_ad176a3962afc92f60da91d2526bcf569}\label{class_cliente_socket_ad176a3962afc92f60da91d2526bcf569}} 
+\index{Cliente\+Socket@{Cliente\+Socket}!envia\+Mensaje@{envia\+Mensaje}}
+\index{envia\+Mensaje@{envia\+Mensaje}!Cliente\+Socket@{Cliente\+Socket}}
+\subsubsection{\texorpdfstring{envia\+Mensaje()}{enviaMensaje()}}
+{\footnotesize\ttfamily void Cliente\+Socket\+::envia\+Mensaje (\begin{DoxyParamCaption}\item[{int}]{enumeracion,  }\item[{const Q\+String \&}]{mensaje }\end{DoxyParamCaption})}
+
+Se envia mensaje desde el cliente hacia el servidor \mbox{\Hypertarget{class_cliente_socket_a2ed30e026ad1252c8ad07fd437cf4cc4}\label{class_cliente_socket_a2ed30e026ad1252c8ad07fd437cf4cc4}} 
+\index{Cliente\+Socket@{Cliente\+Socket}!set\+Direccion\+Del\+Servidor@{set\+Direccion\+Del\+Servidor}}
+\index{set\+Direccion\+Del\+Servidor@{set\+Direccion\+Del\+Servidor}!Cliente\+Socket@{Cliente\+Socket}}
+\subsubsection{\texorpdfstring{set\+Direccion\+Del\+Servidor()}{setDireccionDelServidor()}}
+{\footnotesize\ttfamily void Cliente\+Socket\+::set\+Direccion\+Del\+Servidor (\begin{DoxyParamCaption}\item[{const Q\+String \&}]{ip }\end{DoxyParamCaption})}
+
+Inicializa la variable que contiene la ip para conección \mbox{\Hypertarget{class_cliente_socket_ad5b33460d9575854b5617d2a6e467231}\label{class_cliente_socket_ad5b33460d9575854b5617d2a6e467231}} 
+\index{Cliente\+Socket@{Cliente\+Socket}!set\+Puerto\+Del\+Servidor@{set\+Puerto\+Del\+Servidor}}
+\index{set\+Puerto\+Del\+Servidor@{set\+Puerto\+Del\+Servidor}!Cliente\+Socket@{Cliente\+Socket}}
+\subsubsection{\texorpdfstring{set\+Puerto\+Del\+Servidor()}{setPuertoDelServidor()}}
+{\footnotesize\ttfamily void Cliente\+Socket\+::set\+Puerto\+Del\+Servidor (\begin{DoxyParamCaption}\item[{quint16}]{puerto }\end{DoxyParamCaption})}
+
+Inicializa la variable que contiene el puerto para conección \mbox{\Hypertarget{class_cliente_socket_af8e9fa96a8f3a2207f34b26c74d53de9}\label{class_cliente_socket_af8e9fa96a8f3a2207f34b26c74d53de9}} 
+\index{Cliente\+Socket@{Cliente\+Socket}!set\+Socket\+Descriptor@{set\+Socket\+Descriptor}}
+\index{set\+Socket\+Descriptor@{set\+Socket\+Descriptor}!Cliente\+Socket@{Cliente\+Socket}}
+\subsubsection{\texorpdfstring{set\+Socket\+Descriptor()}{setSocketDescriptor()}}
+{\footnotesize\ttfamily bool Cliente\+Socket\+::set\+Socket\+Descriptor (\begin{DoxyParamCaption}\item[{qintptr}]{socket\+Descriptor,  }\item[{Socket\+State}]{state = {\ttfamily ConnectedState},  }\item[{Open\+Mode}]{open\+Mode = {\ttfamily ReadWrite} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}}
+
+define la variable m\+Id con ina variable qintptr 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+clientesocket.\+h\item 
+clientesocket.\+cpp\end{DoxyCompactItemize}
