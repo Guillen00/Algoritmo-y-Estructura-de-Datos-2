@@ -1033,10 +1033,54 @@ mainwindow.o: ../untitled/mainwindow.cpp ../untitled/mainwindow.h \
 		../Qtnew/5.9.9/gcc_64/include/QtWidgets/qtabwidget.h \
 		../Qtnew/5.9.9/gcc_64/include/QtGui/qicon.h \
 		ui_mainwindow.h \
+		../Qtnew/5.9.9/gcc_64/include/QtCore/QVariant \
+		../Qtnew/5.9.9/gcc_64/include/QtWidgets/QAction \
+		../Qtnew/5.9.9/gcc_64/include/QtWidgets/qaction.h \
+		../Qtnew/5.9.9/gcc_64/include/QtWidgets/qactiongroup.h \
+		../Qtnew/5.9.9/gcc_64/include/QtWidgets/QApplication \
+		../Qtnew/5.9.9/gcc_64/include/QtWidgets/qapplication.h \
+		../Qtnew/5.9.9/gcc_64/include/QtCore/qcoreapplication.h \
+		../Qtnew/5.9.9/gcc_64/include/QtCore/qeventloop.h \
+		../Qtnew/5.9.9/gcc_64/include/QtWidgets/qdesktopwidget.h \
+		../Qtnew/5.9.9/gcc_64/include/QtGui/qguiapplication.h \
+		../Qtnew/5.9.9/gcc_64/include/QtGui/qinputmethod.h \
+		../Qtnew/5.9.9/gcc_64/include/QtWidgets/QButtonGroup \
+		../Qtnew/5.9.9/gcc_64/include/QtWidgets/qbuttongroup.h \
+		../Qtnew/5.9.9/gcc_64/include/QtWidgets/QHeaderView \
+		../Qtnew/5.9.9/gcc_64/include/QtWidgets/qheaderview.h \
+		../Qtnew/5.9.9/gcc_64/include/QtWidgets/qabstractitemview.h \
+		../Qtnew/5.9.9/gcc_64/include/QtWidgets/qabstractscrollarea.h \
+		../Qtnew/5.9.9/gcc_64/include/QtWidgets/qframe.h \
+		../Qtnew/5.9.9/gcc_64/include/QtCore/qabstractitemmodel.h \
+		../Qtnew/5.9.9/gcc_64/include/QtCore/qitemselectionmodel.h \
+		../Qtnew/5.9.9/gcc_64/include/QtWidgets/qabstractitemdelegate.h \
+		../Qtnew/5.9.9/gcc_64/include/QtWidgets/qstyleoption.h \
+		../Qtnew/5.9.9/gcc_64/include/QtWidgets/qabstractspinbox.h \
+		../Qtnew/5.9.9/gcc_64/include/QtGui/qvalidator.h \
+		../Qtnew/5.9.9/gcc_64/include/QtCore/qregularexpression.h \
+		../Qtnew/5.9.9/gcc_64/include/QtWidgets/qslider.h \
+		../Qtnew/5.9.9/gcc_64/include/QtWidgets/qabstractslider.h \
+		../Qtnew/5.9.9/gcc_64/include/QtWidgets/qstyle.h \
+		../Qtnew/5.9.9/gcc_64/include/QtWidgets/qtabbar.h \
+		../Qtnew/5.9.9/gcc_64/include/QtWidgets/qrubberband.h \
+		../Qtnew/5.9.9/gcc_64/include/QtWidgets/QLabel \
+		../Qtnew/5.9.9/gcc_64/include/QtWidgets/qlabel.h \
+		../Qtnew/5.9.9/gcc_64/include/QtWidgets/QLineEdit \
+		../Qtnew/5.9.9/gcc_64/include/QtWidgets/qlineedit.h \
+		../Qtnew/5.9.9/gcc_64/include/QtGui/qtextcursor.h \
+		../Qtnew/5.9.9/gcc_64/include/QtGui/qtextformat.h \
+		../Qtnew/5.9.9/gcc_64/include/QtGui/qpen.h \
+		../Qtnew/5.9.9/gcc_64/include/QtGui/qtextoption.h \
+		../Qtnew/5.9.9/gcc_64/include/QtWidgets/QMenuBar \
+		../Qtnew/5.9.9/gcc_64/include/QtWidgets/qmenubar.h \
+		../Qtnew/5.9.9/gcc_64/include/QtWidgets/qmenu.h \
+		../Qtnew/5.9.9/gcc_64/include/QtWidgets/QPushButton \
+		../Qtnew/5.9.9/gcc_64/include/QtWidgets/qpushbutton.h \
+		../Qtnew/5.9.9/gcc_64/include/QtWidgets/qabstractbutton.h \
+		../Qtnew/5.9.9/gcc_64/include/QtWidgets/QStatusBar \
+		../Qtnew/5.9.9/gcc_64/include/QtWidgets/qstatusbar.h \
 		../Qtnew/5.9.9/gcc_64/include/QtGui/QPainter \
 		../Qtnew/5.9.9/gcc_64/include/QtGui/qpainter.h \
-		../Qtnew/5.9.9/gcc_64/include/QtGui/qtextoption.h \
-		../Qtnew/5.9.9/gcc_64/include/QtGui/qpen.h \
 		../untitled/grafo.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o mainwindow.o ../untitled/mainwindow.cpp
 

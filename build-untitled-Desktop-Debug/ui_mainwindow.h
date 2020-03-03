@@ -36,6 +36,10 @@ public:
     QLineEdit *vertice2;
     QLabel *label_3;
     QLabel *resultado;
+    QLineEdit *elimi1;
+    QLineEdit *elimi2;
+    QPushButton *eliminar;
+    QPushButton *lista;
     QMenuBar *menubar;
     QStatusBar *statusbar;
 
@@ -43,7 +47,7 @@ public:
     {
         if (QDrawLine->objectName().isEmpty())
             QDrawLine->setObjectName(QStringLiteral("QDrawLine"));
-        QDrawLine->resize(800, 500);
+        QDrawLine->resize(800, 570);
         centralwidget = new QWidget(QDrawLine);
         centralwidget->setObjectName(QStringLiteral("centralwidget"));
         vertice1 = new QLineEdit(centralwidget);
@@ -72,6 +76,20 @@ public:
         resultado = new QLabel(centralwidget);
         resultado->setObjectName(QStringLiteral("resultado"));
         resultado->setGeometry(QRect(700, 300, 67, 17));
+        elimi1 = new QLineEdit(centralwidget);
+        elimi1->setObjectName(QStringLiteral("elimi1"));
+        elimi1->setGeometry(QRect(520, 380, 113, 25));
+        elimi1->setStyleSheet(QStringLiteral("background-color :rgb(255, 255, 255)"));
+        elimi2 = new QLineEdit(centralwidget);
+        elimi2->setObjectName(QStringLiteral("elimi2"));
+        elimi2->setGeometry(QRect(520, 340, 113, 25));
+        elimi2->setStyleSheet(QStringLiteral("background-color :rgb(255, 255, 255)"));
+        eliminar = new QPushButton(centralwidget);
+        eliminar->setObjectName(QStringLiteral("eliminar"));
+        eliminar->setGeometry(QRect(560, 420, 89, 25));
+        lista = new QPushButton(centralwidget);
+        lista->setObjectName(QStringLiteral("lista"));
+        lista->setGeometry(QRect(690, 370, 89, 25));
         QDrawLine->setCentralWidget(centralwidget);
         menubar = new QMenuBar(QDrawLine);
         menubar->setObjectName(QStringLiteral("menubar"));
@@ -95,6 +113,8 @@ public:
         label_2->setText(QApplication::translate("QDrawLine", "Hasta Vertice", Q_NULLPTR));
         label_3->setText(QApplication::translate("QDrawLine", "El camino m\303\241s corto es de:", Q_NULLPTR));
         resultado->setText(QString());
+        eliminar->setText(QApplication::translate("QDrawLine", "eliminar", Q_NULLPTR));
+        lista->setText(QApplication::translate("QDrawLine", "lista", Q_NULLPTR));
     } // retranslateUi
 
 };
